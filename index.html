@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <script src="Brython-3.9.3/brython.js"></script>
+    <script src="Brython-3.9.3/brython_stdlib.js"></script>
+    <style>
+        #editarea{
+            width: 500px;
+            height: 600px;
+            margin: 10px auto;
+        }
+    </style>
+    <body onload="brython()">
+        <h1>PhonicDocx</h1>
+        <input id="editarea">
+        <button id="voicerecog"><ion-icon name="mic-outline"></ion-icon>Speak</button>
+        <script type="text/python" id="script1">
+            from browser import document
+            import speech_recognition as sr
+
+            math_dict = {
+                'one': '1',
+                'two': '2',
+                'three': '3',
+                'four': '4',
+                'five': '5',
+                'six': '6',
+                'seven': '7',
+                'eight': '8',
+                'nine': '9',
+                'zero' : '0',
+                'delta': 'Δ',
+                'alpha': 'α',
+                'beta': 'β',
+                'gamma': 'γ',
+                'delta':'δ',
+                'epsilon': 'ε',
+                'zeta': 'ζ',
+                'eta':'η',
+                'theta': 'θ',
+                'iota': 'ι',
+                'kappa':'κ',
+                'lamda': 'λ',
+                'mu':'μ',
+                'nu':'ν',
+                'xi':'ξ',
+                'pi':'π',
+                'rho':'ρ',
+                'sigma':'σ'
+            }
+
+            def voicerec(e):
+                    r = sr.Recognizer()
+            
+                    with sr.Microphone() as source:
+                            r.adjust_for_ambient_noise(source)
+            
+                            print("Speak Up")
+            
+                            audio = r.listen(source)
+            
+                            try:
+                                    print("You said:" + r.recognize_google(audio))
+            
+                                    with open("data.txt", "r+") as f:
+                                            f.write(r.recognize_google(audio) + " ")
+                                            f.seek(0)
+                                            text = f.read()
+                                            words = text.split()
+                                            wordsl = [word.lower() for word in words]
+                                            res = []
+                                            for wrd in wordsl:
+                  
+                                                     # searching from math_dict
+                                                    res.append(math_dict.get(wrd, wrd))
+                  
+                                            res = ' '.join(res)
+                                            f.truncate(0)
+              
+                                            # printing result 
+                                            print("Replaced Strings : " + str(res))
+                                            
+            
+              
+            
+                            except Exception as E:
+                                    print("Error :" + str(E))
+
+            document['voicerecog'].bind('click', voicerec)  
+
+        </script>
+        <script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>
+    </body>
+</html>
