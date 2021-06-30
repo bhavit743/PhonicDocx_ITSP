@@ -130,16 +130,9 @@ math_dict = {
     'double prime sign':'\u02ba',
     
 }
-
-from django.shortcuts import render
 import speech_recognition as sr
 import re
 from collections.abc import Iterable
-
-def index(request):
-    return render(request, "myapp/home.html")
-
-
 def listToString(s): 
     
     # initialize an empty string
@@ -160,7 +153,7 @@ def Convert(string):
     li = list(string.split(" "))
     return li
 #Main Function
-def stt(request):
+def main():
         r = sr.Recognizer()
 
         with sr.Microphone() as source:
@@ -331,8 +324,7 @@ def stt(request):
 # printing result 
 
                                 res = re.sub(' +', ' ', str(res))
-                                
-                                return render(request, "myapp/home.html", {res: 'res'})
+                                print(res)
 
 
                                 
@@ -342,3 +334,7 @@ def stt(request):
 
                 except Exception as E:
                         print("Error :" + str(E))
+
+
+if __name__ == "__main__":
+        main()

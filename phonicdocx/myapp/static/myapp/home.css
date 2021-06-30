@@ -1,0 +1,43 @@
+.keyboard{
+    box-shadow: rgb(185, 185, 185) 5px 0px 10px;
+    width: 58.45%;
+    margin: 20px auto;
+    margin-bottom: 0;
+    position: fixed;
+    bottom: 0;
+    opacity: 0;
+    z-index: 4;
+    transition: 1s all;
+}
+.keyboard.show{
+    opacity: 1;
+}
+/* #show{
+    value: "Open Keyboard";
+}
+#show.show{
+    value: "Close Keyboard";
+} */
+.keyboard ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.keyboard li{
+    display: flex;
+    
+}
+.keyboard button{
+    background-color: white;
+    border: 1px rgb(187, 187, 187) solid;
+    margin: 0px;
+    padding: 15px 60px 35px 50px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 0px;
+    outline: none;
+}
+.keyboard button:hover{
+    background-color: #204c99;
+    color: white;
+} 
