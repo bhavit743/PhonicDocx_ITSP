@@ -6,10 +6,12 @@
     position: fixed;
     bottom: 0;
     opacity: 0;
+    z-index: -50;
     transition: 1s all;
 }
 .keyboard.show{
     opacity: 1;
+    z-index: 5;
 }
 /* #show{
     value: "Open Keyboard";

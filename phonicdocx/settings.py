@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@(#dxxejflyb9&(9c!=mndzzub(-4^+%7ifya!%li&=iq#210_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'phonicdocx.herokuapp.com']
 
@@ -37,9 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',
-    'django_eel',
-    'channels'
+    'myapp'
 ]
 
 MIDDLEWARE = [

@@ -22,20 +22,9 @@ function startConverting()
                           else
                           interimTranscripts+=transcript;
                       };
-                      r.innerHTML += ftr
-
+                      var old = r.value;
+                      r.value = old + ftr;
                       }
-					//   r.innerHTML = ftr ;
-					//   var temp = r.innerHTML ;
-					//   $.ajax({
-					// 	type: "POST",
-					// 	url: "swap.py",
-					// 	data: { param: temp}
-					//   }).done(function( o ) {
-					// 	 // do something
-					// 	 console.log("success")
-					//   });
-                     
                   };
                   spr.onerror=function(event){};
               $(document).ready(function() {

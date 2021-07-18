@@ -1,3 +1,6 @@
 from django.db import models
+from django.db.models.base import Model
 
-# Create your models here.
+class userinp(models.Model):
+    id = models.AutoField(primary_key=True)
+    user_input = models.TextField(null=True)

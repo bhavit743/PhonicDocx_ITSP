@@ -91,11 +91,19 @@
         <li><button onclick="backspace()" id="backsymb">Backspace</button></li>
     </ul>        
 </div>
-<div id = "temp">
-hi
-</div>
+<form method="POST" action="">
+  {% csrf_token %}
+  <input name = "inp" id = "temp" value="HE">
+    
+  <button type="submit">Convert</button>
+</form>
+
+<p>
+  {{userd}}
+</p>
+
 <script>
-    var input = document.getElementById("txtEditor");
+    var input = document.getElementById("temp");
     function typesym(clicked_id){
         var content = document.getElementById(clicked_id).textContent;
         var old_content = input.value;
