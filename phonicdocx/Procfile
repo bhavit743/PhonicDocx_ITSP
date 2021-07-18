@@ -1,0 +1,1 @@
+web: gunicorn phonicdocx.wsgi --log-file -
