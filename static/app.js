@@ -1,34 +1,4 @@
 // 
-math_dict = {
-    'one': '1',
-    'two': '2',
-    'three': '3',
-    'four': '4',
-    'five': '5',
-    'six': '6',
-    'seven': '7',
-    'eight': '8',
-    'nine': '9',
-    'zero' : '0',
-    'delta': 'Δ',
-    'alpha': 'α',
-    'beta': 'β',
-    'gamma': 'γ',
-    'delta':'δ',
-    'epsilon': 'ε',
-    'zeta': 'ζ',
-    'eta':'η',
-    'theta': 'θ',
-    'iota': 'ι',
-    'kappa':'κ',
-    'lamda': 'λ',
-    'mu':'μ',
-    'nu':'ν',
-    'xi':'ξ',
-    'pi':'π',
-    'rho':'ρ',
-    'sigma':'σ'
-}
 
 function startConverting()
               {
@@ -52,20 +22,22 @@ function startConverting()
                           else
                           interimTranscripts+=transcript;
                       };
-					  r.innerHTML = ftr ;
-					  var temp = r.innerHTML ;
-					  $.ajax({
-						type: "POST",
-						url: "swap.py",
-						data: { param: temp}
-					  }).done(function( o ) {
-						 // do something
-						 console.log("success")
-					  });
+                      r.innerHTML += ftr
+
+                      }
+					//   r.innerHTML = ftr ;
+					//   var temp = r.innerHTML ;
+					//   $.ajax({
+					// 	type: "POST",
+					// 	url: "swap.py",
+					// 	data: { param: temp}
+					//   }).done(function( o ) {
+					// 	 // do something
+					// 	 console.log("success")
+					//   });
                      
                   };
                   spr.onerror=function(event){};
-              }
               $(document).ready(function() {
                   $("#send").click(function(event){
                         $.ajax({
