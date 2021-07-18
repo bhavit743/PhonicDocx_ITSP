@@ -134,7 +134,6 @@ tornado==6.1
 tqdm==4.61.1
 traitlets==5.0.5
 Twisted==21.2.0
-twisted-iocpsupport==1.0.1
 txaio==21.2.1
 typing-extensions==3.7.4.3
 tzlocal==2.1
