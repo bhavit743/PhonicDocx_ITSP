@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .swap import swap
 
 def index(request):
+    user_input="ok"
     if request.method == "POST":
         user_input = request.POST.get('inp')
         data = userinp(user_input = user_input)
