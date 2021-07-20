@@ -1755,9 +1755,11 @@
 // Object.defineProperty(exports, '__esModule', { value: true });
 
 // })));
+
 function f1() {
 	//function to make the text bold using DOM method
 	document.getElementById("textarea1").style.fontWeight = "bold";
+	console.log(selectedText)
 }
 
 function f2() {
