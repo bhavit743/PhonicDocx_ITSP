@@ -161,7 +161,7 @@ def swap(val):
     res = []
     res3 = []
     wordsintegrate = ['integarte', 'integration', 'integrating']
-
+    wordsdifferentiate = ['differentiate', 'differentiation', 'differentiating']
     for wrd in wordsnew:
             if wrd in wordsintegrate:
                 indexing = wordsnew.index(wrd)
@@ -194,7 +194,23 @@ def swap(val):
                 else:
                     break
 
-                                    
+    for wrd in wordsnew:
+        if wrd in wordsdifferentiate:
+            indexing = wordsnew.index(wrd)
+            if wordsnew[indexing +1] == 'of':
+                indexof = indexing +1
+                indexwith = wordsnew.index('with')
+                if wordsnew[indexwith+1] == 'respect':
+                    indexrespect = wordsnew.index('respect')
+                    diffwrt = wordsnew[indexrespect+2]
+                    wordsnew[indexing:indexof] = 'd/d'+ diffwrt
+                    del wordsnew[indexof+3]
+                    indexwith2 = wordsnew.index('with')
+                    del wordsnew[indexwith+2 : indexwith + 6]  
+                    wordsnew[indexing] = wordsnew[indexing] + wordsnew[indexing + 1] + wordsnew[indexing + 2] +wordsnew[indexing + 3]
+                    del wordsnew[indexing+1 : indexing +4]
+                else:
+                    break                      
     # part 1 replacing 3 word signs
     wordsnew4 = list(i + " " + j + " " + k + " " + l for i, j, k, l in zip(wordsnew, wordsnew[1:], wordsnew[2:], wordsnew[3:]))
     new = []

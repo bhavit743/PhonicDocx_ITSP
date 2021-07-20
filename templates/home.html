@@ -242,6 +242,9 @@
 	<br>
 	<br>
   <div class="keyboard">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-x-lg" viewBox="0 0 16 16" style="position: absolute; right:5px; top: 5px; cursor: pointer;" id="closebut" onclick="closeKeyb()">
+		<path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+	  </svg>
     <ul>
         <li><button onclick="typesym(this.id)" id="intsymb">&#x222b</button></li>
         <li><button onclick="typesym(this.id)" id="curlsymb">&#x2207</button></li>
@@ -263,6 +266,15 @@
 </form> -->
 
 <script>
+	window.onbeforeunload = function(){
+		sessionStorage.setItem("inputpe", document.getElementById("textarea1").value)
+	}
+	window.onload = function(){
+		var inp = sessionStorage.getItem("inputpe")
+		if (inp !== null){
+			document.getElementById("textarea1").value = inp;
+		}
+	}
     var input = document.getElementById("textarea2");
     function typesym(clicked_id){
         var content = document.getElementById(clicked_id).textContent;
@@ -284,6 +296,10 @@
             show_key.innerHTML = "Open Keyboard";
         }
     })
+function closeKeyb(){
+	keyboard.classList.toggle("show");
+
+}
 </script> 
 
   
