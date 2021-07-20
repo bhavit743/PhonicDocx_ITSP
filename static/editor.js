@@ -1,7 +1,27 @@
+function getSelectedText() 
+{
+    // obtain the object reference for the <textarea>
+    var txtarea = document.getElementById("textarea1");
+    // obtain the index of the first selected character
+    var start = txtarea.selectionStart;
+    // obtain the index of the last selected character
+    var finish = txtarea.selectionEnd;
+    // obtain the selected text
+    window.sel = txtarea.value.substring(start, finish);
+    // do something with the selected content
+	window.iDiv = document.createElement('div');
+
+iDiv.id = 'temp';
+iDiv.className = 'temp1';
+iDiv.innerHTML += sel
+}
+
+
 function f1() {
 	//function to make the text bold using DOM method
-	document.getElementById("textarea1").style.fontWeight = "bold";
-	console.log(selectedText)
+	iDiv.style.fontWeight = "bold";
+	console.log(sel)
+	console.log(iDiv.innerHTML)
 }
 
 function f2() {
@@ -48,3 +68,4 @@ function f9() {
 	document.getElementById("textarea1").style.textTransform = "capitalize";
 	document.getElementById("textarea1").value = " ";
 }
+

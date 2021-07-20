@@ -53,10 +53,43 @@
 #re{
     border: steelblue solid 2px;
     color: black;
+    position: fixed;
+    bottom: 5px;
+    left: 4px;
+    background: white;
+}
+#re2{
+    border: rgb(187, 7, 7) solid 2px;
+    color: black;
+    position: fixed;
+    bottom: 5px;
+    left: 120px;
+    background: white;
+}
+#re2m{
+    border: rgb(187, 7, 7) solid 2px;
+    color: black;
+    position: fixed;
+    bottom: 5px;
+    left: 50px;
+    background: white;
+    display: none;
 }
 #re:hover{
     color: white;
     background-color: steelblue;
+}
+#rem:hover{
+    color: white;
+    background-color: steelblue;
+}
+#re2:hover{
+    color: white;
+    background-color: rgb(187, 7, 7);
+}
+#re2m:hover{
+    color: white;
+    background-color: rgb(187, 7, 7);
 }
 .convert, #show, #download{
     border: goldenrod solid 2px;
@@ -72,4 +105,27 @@
 #download:hover{
     color: white;
     background-color: goldenrod;
+}
+#rem{
+    display: none;
+    border: steelblue solid 2px;
+    color: black;
+    position: fixed;
+    bottom: 5px;
+    left: 4px;
+    background: white;
+}
+@media only screen and (max-width: 650px){
+    #rem{
+        display: block;
+    }
+    #re{
+        display: none;
+    }
+    #re2m{
+        display: block;
+    }
+    #re2{
+        display: none;
+    }
 }

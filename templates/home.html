@@ -184,9 +184,7 @@
 					<textarea id="textarea1"
 							class="input shadow"
 							name="inp"
-							rows="15"
-							cols="100"
-							placeholder="Your text here ">
+							placeholder="Your text here "  onselect="getSelectedText()">
 					</textarea>
 			</div>
       <button type="submit" class="convert"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16" style="padding-right: 5px;"> 
@@ -197,14 +195,13 @@
         <textarea id="textarea2"
 							class="input shadow"
 							name="name"
-							rows="15"
-							cols="100"
 							placeholder="Your text here ">
               {{userd}}
 					</textarea>
 					<button id="download" onclick="savePDF()"  style="padding: 5px 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
 						<path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
 					  </svg>Download as PDF</button>
+					<!-- <button onclick="refine()">Refine</button> -->
 			</div>
 		</div>
 		<div id= 'record'>
@@ -212,10 +209,23 @@
 			  <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"/>
 			  <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
 			</svg>Record</button>
+			<button onclick="startConverting()" class='btn btn-info btn-sm' id="rem"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic-fill" viewBox="0 0 16 16">
+				<path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"/>
+				<path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+			  </svg></button>
+			<button onclick="stopConverting()" class='btn btn-info btn-sm' id="re2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16"id="closebut" style="padding-right: 5px;">
+				<path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+			  </svg>Stop</button>
+			  <button onclick="stopConverting()" class='btn btn-info btn-sm' id="re2m"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" id="closebut">
+				<path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+			  </svg></button>
 		</div>
 	</section>
 	<br>
 	<br>
+	<div class="tempp">
+		
+	</div>
   <div class="keyboard">
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-x-lg" viewBox="0 0 16 16" style="position: absolute; right:5px; top: 5px; cursor: pointer;" id="closebut" onclick="closeKeyb()">
 		<path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
