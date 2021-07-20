@@ -14,35 +14,88 @@
     
 
     <title>PhonicDocx</title>
+    <!---editor-->
+    <link rel="stylesheet"
+		href=
+"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity=
+"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+		crossorigin="anonymous">
+	<!-- fontawesome cdn For Icons -->
+	<link rel="stylesheet"
+		href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+		integrity=
+"sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+		crossorigin="anonymous" />
+	<link rel="stylesheet"
+		href=
+"https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity=
+"sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+		crossorigin="anonymous" />
+
+	<!--Internal CSS start-->
+	<style>
+		
+		
+		.side {
+			margin-left: 0;
+		}
+		
+		.editora button {
+			margin: 10px;
+			border: goldenrod solid 2px;
+      color: black;
+			margin-bottom: 25px;
+      border-radius: 9999px;
+		}
+		
+		.editora button:hover {
+			background-color: goldenrod;
+      color: white;
+      border: goldenrod solid 2px;
+		}
+		
+		textarea {
+			padding:3% 0%;
+      width: 100%;
+      resize: none;
+		}
+		
+		.flex-box {
+			display: flex;
+			justify-content: center;
+		}
+	</style>
   </head>
   <body>
+    <!-- <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <img src="{% static 'img/logo.png' %}" alt="" class="d-inline-block align-text-top" width="210px" height="60px">
+        <ul style="display: flex; padding-top: 20px;" class="naclist">
+          <a href=""><li>Home</li></a>
+          <a href=""><li>Home</li></a>
+          <a href=""><li>Home</li></a>
+        </ul>
+         <a class="navbar-brand" href="#">
+          <img src="{% static 'img/logo.png' %}" alt="" class="d-inline-block align-text-top" width="200px" height="60px">
+          Bootstrap
+        </a> 
+      </div>
+    </nav> -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">PhonicDocx <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
-          <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
-          <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
-          <path d="M10.025 8a4.486 4.486 0 0 1-1.318 3.182L8 10.475A3.489 3.489 0 0 0 9.025 8c0-.966-.392-1.841-1.025-2.475l.707-.707A4.486 4.486 0 0 1 10.025 8zM7 4a.5.5 0 0 0-.812-.39L3.825 5.5H1.5A.5.5 0 0 0 1 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 7 12V4zM4.312 6.39 6 5.04v5.92L4.312 9.61A.5.5 0 0 0 4 9.5H2v-3h2a.5.5 0 0 0 .312-.11z"/>
-        </svg></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="{% static 'img/logo.png' %}" alt="" class="d-inline-block align-text-top" width="210px" height="60px">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                More
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">About</a></li>
-                <li><a class="dropdown-item" href="#">Our Team</a></li>
-              </ul>
-            </li>
-          </ul>
-          
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Team</a>
+          </div>
         </div>
       </div>
     </nav>
@@ -50,10 +103,6 @@
       <button id="recordButton" onclick= "startConverting" >Record </button>             
       <button id="stopButton" disabled>Stop </button>
      </div> -->
-     <div id= 'record'>
-      <button onclick="startConverting()" class='btn btn-info btn-sm' id="re">record</button>
-      <button class='btn btn-info btn-sm ml-3' value="Send" id="send">Send</button>
-  </div>
 <script src= " {% static 'app.js' %} " ></script>
   
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -67,18 +116,126 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <link href=" {% static 'editor.css' %} "type="text/css" rel="stylesheet"/>
 <script src=" {% static 'editor.js' %} "> </script>
-<script type="text/javascript" src="/eel/eel.js"></script>
-<div id="txtEditor"></div>
-<script type="text/javascript">
-  
-  $(document).ready(function() {
-  
-  $("#txtEditor").Editor();                   
-  
-  });
-  
-  </script>
-   <button onclick="showKeyboard()" id="show">Open Keyboard</button>
+<!-- <div id="txtEditor">
+</div>
+<div class="texteditorpers"></div> -->
+<!-- <div id="visual-editor">
+  <p><b>Editor<b>
+  <div id="editor" class="pell"></div></div> -->
+  <!-- <textarea id="html-output" name="html-output" onchange="TextArea()" onblur="TextArea()" rows="20" cols="88" style="resize:none;font-family: sans-serif;"><b>Hello World</b></textarea> -->
+  <section class="editora">
+		<div class="flex-box">
+			<div class="row">
+				<div class="col" style="text-align: center; justify-content: center;">
+					<!-- Adding different buttons for
+						different functionality-->
+					<!--onclick attribute is added to give
+						button a work to do when it is clicked-->
+					<button type="button"
+							onclick="f1()"
+							class=" shadow-sm btn btn-outline-secondary"
+							data-toggle="tooltip"
+							data-placement="top"
+							title="Bold Text">
+			Bold</button>
+					<button type="button"
+							onclick="f2()"
+							class="shadow-sm btn btn-outline-success"
+							data-toggle="tooltip"
+							data-placement="top"
+							title="Italic Text">
+			Italic</button>
+					<button type="button"
+							onclick="f3()"
+							class=" shadow-sm btn btn-outline-primary"
+							data-toggle="tooltip"
+							data-placement="top"
+							title="Left Align">
+			<i class="fas fa-align-left"></i></button>
+					<button type="button"
+							onclick="f4()"
+							class="btn shadow-sm btn-outline-secondary"
+							data-toggle="tooltip"
+							data-placement="top"
+							title="Center Align">
+			<i class="fas fa-align-center"></i></button>
+					<button type="button"
+							onclick="f5()"
+							class="btn shadow-sm btn-outline-primary"
+							data-toggle="tooltip"
+							data-placement="top"
+							title="Right Align">
+			<i class="fas fa-align-right"></i></button>
+					<button type="button"
+							onclick="f6()"
+							class="btn shadow-sm btn-outline-secondary"
+							data-toggle="tooltip"
+							data-placement="top"
+							title="Uppercase Text">
+			Upper Case</button>
+					<button type="button"
+							onclick="f7()"
+							class="btn shadow-sm btn-outline-primary"
+							data-toggle="tooltip"
+							data-placement="top"
+							title="Lowercase Text">
+			Lower Case</button>
+					<button type="button"
+							onclick="f8()"
+							class="btn shadow-sm btn-outline-primary"
+							data-toggle="tooltip"
+							data-placement="top"
+							title="Capitalize Text">
+			Capitalize</button>
+					<button type="button"
+							onclick="f9()"
+							class="btn shadow-sm btn-outline-primary side"
+							data-toggle="tooltip"
+							data-placement="top"
+							title="Tooltip on top">
+			Clear Text</button>
+      				<button onclick="showKeyboard()" id="show"data-toggle="tooltip"
+					  data-placement="top">Open Keyboard</button>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row23">
+      <form method="POST" action="">
+        {% csrf_token %}
+			<div class="col">
+					<textarea id="textarea1"
+							class="input shadow"
+							name="inp"
+							rows="15"
+							cols="100"
+							placeholder="Your text here ">
+					</textarea>
+			</div>
+      <button type="submit" class="convert"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16" style="padding-right: 5px;"> 
+        <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>
+      </svg> Convert</button>
+    </form>
+			<div class="col">
+        <textarea id="textarea2"
+							class="input shadow"
+							name="name"
+							rows="15"
+							cols="100"
+							placeholder="Your text here ">
+              {{userd}}
+					</textarea>
+			</div>
+		</div>
+		<div id= 'record'>
+			<button onclick="startConverting()" class='btn btn-info btn-sm' id="re"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic-fill" viewBox="0 0 16 16" style="padding-right: 5px;">
+			  <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"/>
+			  <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+			</svg>Record</button>
+		</div>
+	</section>
+	<br>
+	<br>
   <div class="keyboard">
     <ul>
         <li><button onclick="typesym(this.id)" id="intsymb">&#x222b</button></li>
@@ -91,19 +248,17 @@
         <li><button onclick="backspace()" id="backsymb">Backspace</button></li>
     </ul>        
 </div>
-<form method="POST" action="">
+<!-- <form method="POST" action="">
   {% csrf_token %}
   <input name = "inp" id = "temp" value="HE">
-    
-  <button type="submit">Convert</button>
-</form>
-
-<p>
-  {{userd}}
-</p>
+  <div class="editorpers" style="height: 300px;" contenteditable="true">hi</div>
+  <button type="submit" class="convert"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16" style="padding-right: 5px;"> 
+    <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>
+  </svg> Convert</button>
+</form> -->
 
 <script>
-    var input = document.getElementById("temp");
+    var input = document.getElementById("textarea2");
     function typesym(clicked_id){
         var content = document.getElementById(clicked_id).textContent;
         var old_content = input.value;

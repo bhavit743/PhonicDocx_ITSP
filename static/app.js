@@ -3,7 +3,7 @@
 function startConverting()
               {
                 // document.getElementById("re").style.visibility = "";   
-                var r=document.getElementById('temp');
+                var r=document.getElementById("textarea1");
                 var spr=new webkitSpeechRecognition(); //Initialisation of web Kit
                   spr.continuous=false; //True if continous conversion is needed, false to stop transalation when paused 
                   spr.interimResults=true;
@@ -24,6 +24,7 @@ function startConverting()
                       };
                       var old = r.value;
                       r.value = old + ftr;
+                      console.log("hi")
                       }
                   };
                   spr.onerror=function(event){};

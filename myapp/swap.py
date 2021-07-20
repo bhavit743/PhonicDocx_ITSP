@@ -131,7 +131,7 @@ math_dict = {
     
 }
 
-import speech_recognition as sr
+# import speech_recognition as sr
 import re
 from collections.abc import Iterable
 def listToString(s): 
