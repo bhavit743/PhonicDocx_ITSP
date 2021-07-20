@@ -1,5 +1,3 @@
-// 
-
 function startConverting()
               {
                 // document.getElementById("re").style.visibility = "";   

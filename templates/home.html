@@ -72,20 +72,6 @@
 	</style>
   </head>
   <body>
-    <!-- <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <img src="{% static 'img/logo.png' %}" alt="" class="d-inline-block align-text-top" width="210px" height="60px">
-        <ul style="display: flex; padding-top: 20px;" class="naclist">
-          <a href=""><li>Home</li></a>
-          <a href=""><li>Home</li></a>
-          <a href=""><li>Home</li></a>
-        </ul>
-         <a class="navbar-brand" href="#">
-          <img src="{% static 'img/logo.png' %}" alt="" class="d-inline-block align-text-top" width="200px" height="60px">
-          Bootstrap
-        </a> 
-      </div>
-    </nav> -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <img src="{% static 'img/logo.png' %}" alt="" class="d-inline-block align-text-top" width="210px" height="60px">
@@ -94,17 +80,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="#">About</a>
-            <a class="nav-link" href="#">Team</a>
+            <a class="nav-link" aria-current="page" href="#" style="margin-left: 20px;">Home</a>
+            <a class="nav-link" href="#" style="margin-left: 20px;">About</a>
+            <a class="nav-link" href="#" style="margin-left: 20px;">Team</a>
           </div>
         </div>
       </div>
     </nav>
-    <!-- <div id="controls">
-      <button id="recordButton" onclick= "startConverting" >Record </button>             
-      <button id="stopButton" disabled>Stop </button>
-     </div> -->
   
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
@@ -118,13 +100,6 @@
 <link href=" {% static 'editor.css' %} "type="text/css" rel="stylesheet"/>
 <script src= " {% static 'app.js' %} " ></script>
 <script src=" {% static 'editor.js' %} "> </script>
-<!-- <div id="txtEditor">
-</div>
-<div class="texteditorpers"></div> -->
-<!-- <div id="visual-editor">
-  <p><b>Editor<b>
-  <div id="editor" class="pell"></div></div> -->
-  <!-- <textarea id="html-output" name="html-output" onchange="TextArea()" onblur="TextArea()" rows="20" cols="88" style="resize:none;font-family: sans-serif;"><b>Hello World</b></textarea> -->
   <section class="editora">
 		<div class="flex-box">
 			<div class="row">
@@ -256,15 +231,6 @@
         <li><button onclick="backspace()" id="backsymb">Backspace</button></li>
     </ul>        
 </div>
-<!-- <form method="POST" action="">
-  {% csrf_token %}
-  <input name = "inp" id = "temp" value="HE">
-  <div class="editorpers" style="height: 300px;" contenteditable="true">hi</div>
-  <button type="submit" class="convert"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16" style="padding-right: 5px;"> 
-    <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>
-  </svg> Convert</button>
-</form> -->
-
 <script>
 	window.onbeforeunload = function(){
 		sessionStorage.setItem("inputpe", document.getElementById("textarea1").value)

@@ -10,7 +10,9 @@ a {
   a:visited {
     color: #8d75a3;
   }
-  
+  button.navbar-toggler.collapsed{
+    border: none; 
+  }
   body {
       line-height: 1.5;
       font-family: sans-serif;

@@ -13,12 +13,7 @@
     opacity: 1;
     z-index: 5;
 }
-/* #show{
-    value: "Open Keyboard";
-}
-#show.show{
-    value: "Close Keyboard";
-} */
+
 .keyboard ul{
     list-style-type: none;
     display: flex;
