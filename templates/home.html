@@ -1,107 +1,5 @@
- {% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="{% static 'home.css' %}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href= " {% static 'style.css' %} " >
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="shortcut icon" type="img/png" href="{% static 'img/titlelogo.png' %}">
-
-    <title>PhonicDocx</title>
-    <!---editor-->
-    <link rel="stylesheet"
-		href=
-"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-		integrity=
-"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-		crossorigin="anonymous">
-	<!-- fontawesome cdn For Icons -->
-	<link rel="stylesheet"
-		href=
-"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-		integrity=
-"sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
-		crossorigin="anonymous" />
-	<link rel="stylesheet"
-		href=
-"https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-		integrity=
-"sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-		crossorigin="anonymous" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
-	<!--Internal CSS start-->
-	<style>
-		
-		
-		.side {
-			margin-left: 0;
-		}
-		
-		.editora button {
-			margin: 10px;
-			border: goldenrod solid 2px;
-      color: black;
-			margin-bottom: 25px;
-      border-radius: 9999px;
-	  background: transparent;
-	  font-size: 1.5rem;
-		}
-		
-		.editora button:hover {
-			background-color: goldenrod;
-      color: white;
-      border: goldenrod solid 2px;
-		}
-		
-		textarea {
-			padding:3% 0%;
-      width: 100%;
-      resize: none;
-	  height: 750px;
-	  font-size: 1.4rem;
-		}
-		
-		.flex-box {
-			display: flex;
-			justify-content: center;
-		}
-	</style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <img src="{% static 'img/logo.png' %}" alt="" class="d-inline-block align-text-top" width="210px" height="60px">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" aria-current="page" href="#" style="margin-left: 20px;">Home</a>
-            <a class="nav-link" href="#" style="margin-left: 20px;">About</a>
-            <a class="nav-link" href="#" style="margin-left: 20px;">Team</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-
-<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
- 
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<link href=" {% static 'editor.css' %} "type="text/css" rel="stylesheet"/>
-<script src= " {% static 'app.js' %} " ></script>
-<script src=" {% static 'editor.js' %} "> </script>
+{% extends "base.html" %}    
+{% block content %} 
   <section class="editora">
 		<div class="flex-box">
 			<div class="row">
@@ -189,7 +87,7 @@
 					<textarea id="textarea1"
 							class="input shadow"
 							name="inp"
-							placeholder="Your text here "  onselect="getSelectedText()">
+							placeholder="Input text here"  onselect="getSelectedText()">
 					</textarea>
 			</div>
     </form>
@@ -200,7 +98,7 @@
         <textarea id="textarea2"
 							class="input shadow"
 							name="name"
-							placeholder="Your text here ">
+							placeholder="Output text here ">
               {{userd}}
 					</textarea>
 					<!-- <button onclick="refine()">Refine</button> -->
@@ -293,6 +191,4 @@ function closeKeyb(){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
    
-  </body>
-
-</html>
+{% endblock %}

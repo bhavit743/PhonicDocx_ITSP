@@ -13,6 +13,11 @@ def index(request):
     # userf = swap.swap(user_input)
     return render(request, "home.html", {'userd': user_input});
 
+def team(request):
+    return render(request, "team.html")
+
+def about(request):
+    return render(request, "about.html")
 
 
 

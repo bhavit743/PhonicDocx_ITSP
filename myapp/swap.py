@@ -324,7 +324,7 @@ def swap(val):
     for wrd in wordsnew:
 # searching from math_dict
         res.append(math_dict.get(wrd, wrd))
-      
+    res.insert(0, " ")          
     res = ' '.join(res)
                                 
 # printing result 
