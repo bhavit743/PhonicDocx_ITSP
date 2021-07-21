@@ -131,9 +131,8 @@ math_dict = {
     
 }
 
-# import speech_recognition as sr
-import re
 from collections.abc import Iterable
+import re
 def listToString(s): 
     
     # initialize an empty string
@@ -141,6 +140,8 @@ def listToString(s):
     
     # return string  
     return (str1.join(s))
+
+
 
 def flatten(lis):
      for item in lis:
@@ -153,180 +154,180 @@ def flatten(lis):
 def Convert(string):
     li = list(string.split(" "))
     return li
-
 def swap(val):
     words = val.split()
     wordsnew = [x.lower() for x in words]
     res2  = []
     res = []
     res3 = []
-    wordsintegrate = ['integarte', 'integration', 'integrating']
+    wordsintegrate = ['integrate', 'integration', 'integrating']
     wordsdifferentiate = ['differentiate', 'differentiation', 'differentiating']
     for wrd in wordsnew:
-            if wrd in wordsintegrate:
-                indexing = wordsnew.index(wrd)
-                if wordsnew[indexing +1] == 'from':
-                    indexfrom = indexing +1
-                    indexto = wordsnew.index('to')
-                    indexof = wordsnew.index('of')
-                    wordsnew[indexing] = wordsnew[indexfrom + 1: indexto]
+        if wrd in wordsintegrate:
+            indexing = wordsnew.index(wrd)
+            if wordsnew[indexing +1] == 'from':
+                indexfrom = indexing +1
+                indexto = wordsnew.index('to' , indexfrom)
+                indexof = wordsnew.index('of' , indexing)
+                wordsnew[indexing] = wordsnew[indexfrom + 1: indexto]
 
-                    wordsnew[indexfrom] = '∫'
-                    del wordsnew[indexfrom +1 : indexto]
-                    indexto = wordsnew.index('to')
-                    indexof = wordsnew.index('of')
-                    wordsnew[indexto] = wordsnew[indexto +1: indexof]
-                    del wordsnew[indexto+1: indexof+1]
-                    
-                    wordsnew = [''.join(sub_list) for sub_list in wordsnew]
-                    
-                    indexintegrate = wordsnew.index('∫')
-                    indexlowerlimit = indexintegrate -1
-                    indexupperlimit = indexintegrate +1
-                    lowerlimit = wordsnew[indexlowerlimit]
-                    upperlimit = wordsnew[indexupperlimit]
-                    subscript = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()", "ₐ₈CDₑբGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥwₓᵧZₐ♭꜀ᑯₑբ₉ₕᵢⱼₖₗₘₙₒₚ૧ᵣₛₜᵤᵥwₓᵧ₂₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎")
-                    superscript = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()", "ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖ۹ʳˢᵗᵘᵛʷˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾")
+                wordsnew[indexfrom] = '∫'
+                del wordsnew[indexfrom +1 : indexto]
+                indexto = wordsnew.index('to', indexfrom)
+                indexof = wordsnew.index('of', indexto)
+                wordsnew[indexto] = wordsnew[indexto +1: indexof]
+                del wordsnew[indexto+1: indexof+1]
+               
+                wordsnew = [''.join(sub_list) for sub_list in wordsnew]
+                
+                indexintegrate = wordsnew.index('∫')
+                indexlowerlimit = indexintegrate -1
+                indexupperlimit = indexintegrate +1
+                lowerlimit = wordsnew[indexlowerlimit]
+                upperlimit = wordsnew[indexupperlimit]
+                subscript = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()", "ₐ₈CDₑբGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥwₓᵧZₐ♭꜀ᑯₑբ₉ₕᵢⱼₖₗₘₙₒₚ૧ᵣₛₜᵤᵥwₓᵧ₂₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎")
+                superscript = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()", "ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖ۹ʳˢᵗᵘᵛʷˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾")
 
-                    wordsnew[indexupperlimit] = upperlimit.translate(superscript)
-                    wordsnew[indexlowerlimit] = lowerlimit.translate(subscript)
-                                            
-                else:
-                    break
+                wordsnew[indexupperlimit] = upperlimit.translate(superscript)
 
+                wordsnew[indexlowerlimit] = lowerlimit.translate(subscript)
+                wordsnew[indexintegrate] = wordsnew[indexlowerlimit] + wordsnew[indexintegrate] + wordsnew[indexupperlimit] 
+                del wordsnew[indexintegrate -1]
+                del wordsnew[indexintegrate]                 
+            else:
+                indexof = wordsnew.index('of', indexing)
+                wordsnew[indexing] = '∫'
+                del wordsnew[indexof]
+                
     for wrd in wordsnew:
         if wrd in wordsdifferentiate:
             indexing = wordsnew.index(wrd)
             if wordsnew[indexing +1] == 'of':
                 indexof = indexing +1
-                indexwith = wordsnew.index('with')
+                indexwith = wordsnew.index('with', indexof)
                 if wordsnew[indexwith+1] == 'respect':
-                    indexrespect = wordsnew.index('respect')
+                    indexrespect = wordsnew.index('respect', indexwith)
                     diffwrt = wordsnew[indexrespect+2]
-                    wordsnew[indexing:indexof] = 'd/d'+ diffwrt
-                    del wordsnew[indexof+3]
-                    indexwith2 = wordsnew.index('with')
-                    del wordsnew[indexwith+2 : indexwith + 6]  
-                    wordsnew[indexing] = wordsnew[indexing] + wordsnew[indexing + 1] + wordsnew[indexing + 2] +wordsnew[indexing + 3]
-                    del wordsnew[indexing+1 : indexing +4]
+                    diffof = wordsnew[indexof +1 : indexwith]
+                    difference = indexwith - indexof - 1
+                    wordsnew[indexing] = 'd'+'('
+                    wordsnew[indexof : indexof+difference-1] = diffof
+                    wordsnew[indexof+difference] = ')'+'/d'+diffwrt
+                    indexto = wordsnew.index('to', indexof)
+                    del wordsnew[indexof+difference+1 : indexto +2]
                 else:
-                    break                      
-    # part 1 replacing 3 word signs
+                    break
+                      
+# part 1 replacing 3 word signs
     wordsnew4 = list(i + " " + j + " " + k + " " + l for i, j, k, l in zip(wordsnew, wordsnew[1:], wordsnew[2:], wordsnew[3:]))
     new = []
     for wrd in wordsnew4:
-        if wrd in dict.keys(math_dict):
-    # searchingfrom math_dict
-                new.append(math_dict.get(wrd, wrd))
-        
+       if wrd in dict.keys(math_dict):
+# searchingfrom math_dict
+            new.append(math_dict.get(wrd, wrd))
+      
     new = ' '.join(new)
 
     new2 = Convert(new)
 
-                                    
+                                 
 
 
 
     indexfor_replacement = 0
     for k in wordsnew4:
-            if k in math_dict:
-                index = wordsnew4.index(k)
-                number = index
-                indexnext = index +1
-            
-            
-                wordsnew[number] = new2[indexfor_replacement]
-                wordsnew[number + 1] = ''
-                wordsnew[number + 2] = ''
-                wordsnew[number + 3] = ''
+        if k in math_dict:
+            index = wordsnew4.index(k)
+            number = index
+            indexnext = index +1
+        
+        
+            wordsnew[number] = new2[indexfor_replacement]
+            wordsnew[number + 1] = ''
+            wordsnew[number + 2] = ''
+            wordsnew[number + 3] = ''
 
-    
-                indexfor_replacement = indexfor_replacement + 1
+   
+            indexfor_replacement = indexfor_replacement + 1
 
 
-                                    
-    # part 1.2 replacing 3 word signs
+                                 
+# part 1.2 replacing 3 word signs
     wordsnew3 = list(i + " " + j + " " + k for i, j, k in zip(wordsnew, wordsnew[1:], wordsnew[2:]))
     new = []
 
-            
+        
 
 
     for wrd in wordsnew3:
-            if wrd in dict.keys(math_dict):
-    # searchingfrom math_dict
-                new.append(math_dict.get(wrd, wrd))
-        
+        if wrd in dict.keys(math_dict):
+# searchingfrom math_dict
+            new.append(math_dict.get(wrd, wrd))
+      
     new = ' '.join(new)
 
     new2 = Convert(new)
-                                    
+                                 
+
+
 
     indexfor_replacement = 0
     for k in wordsnew3:
-            if k in math_dict:
-                index = wordsnew3.index(k)
-                indexnext = index + 1
-                number = index
-            
-                wordsnew[number] = new2[indexfor_replacement]
-                wordsnew[number + 1] = ''
-                wordsnew[number + 2] = ''
-                indexfor_replacement = indexfor_replacement + 1
-                                    
+        if k in math_dict:
+            index = wordsnew3.index(k)
+            indexnext = index + 1
+            number = index
+        
+            wordsnew[number] = new2[indexfor_replacement]
+            wordsnew[number + 1] = ''
+            wordsnew[number + 2] = ''
+            indexfor_replacement = indexfor_replacement + 1
+                                 
 
 
-                                
+                               
 
-    # part 2 replacing 2 word signs
+# part 2 replacing 2 word signs
     wordsnew2 = list(i + " " + j for i, j in zip(wordsnew, wordsnew[1:]))
 
     new = []
     for wrd in wordsnew2:
-            if wrd in dict.keys(math_dict):
-    # searchingfrom math_dict
-                new.append(math_dict.get(wrd, wrd))
-        
-            new = ' '.join(new)
+        if wrd in dict.keys(math_dict):
+# searchingfrom math_dict
+            new.append(math_dict.get(wrd, wrd))
+      
+    new = ' '.join(new)
 
-            new2 = Convert(new)
-                                    
+    new2 = Convert(new)
+                                 
 
 
 
     indexfor_replacement = 0
     for k in wordsnew2:
-            if k in math_dict:
-                index = wordsnew2.index(k)
-                indexnext = index + 1
-                number = index
-            
-    
-            
-                wordsnew[number] = new2[indexfor_replacement]
-                wordsnew[number + 1] = ''
-            
+        if k in math_dict:
+            index = wordsnew2.index(k)
+            indexnext = index + 1
+            number = index
         
-                indexfor_replacement = indexfor_replacement + 1
-                                    
+   
+        
+            wordsnew[number] = new2[indexfor_replacement]
+            wordsnew[number + 1] = ''
+        
+     
+            indexfor_replacement = indexfor_replacement + 1
+                                 
 
 
-    #part 3 replacing 1 word signs
+#part 3 replacing 1 word signs
     for wrd in wordsnew:
-    # searching from math_dict
-            res.append(math_dict.get(wrd, wrd))
-        
+# searching from math_dict
+        res.append(math_dict.get(wrd, wrd))
+      
     res = ' '.join(res)
-                                    
-    # printing result 
+                                
+# printing result 
 
     res = re.sub(' +', ' ', str(res))
     return res
-
-# if __name__ == '__main__':
-#     try:
-#         arg = sys.argv[1]
-#     except IndexError:
-#         arg = None
-
-#     return_val = do_something(arg)
